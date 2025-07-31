@@ -93,6 +93,17 @@ gcloud projects add-iam-policy-binding your-project-id \
     --role="roles/artifactregistry.admin"
 ```
 
+Grant the serviceAccountUser role
+```bash
+gcloud projects add-iam-policy-binding your-project-id \
+    --member="serviceAccount:github-actions@your-project-id.iam.gserviceaccount.com" \
+    --role="roles/iam.serviceAccountUser"
+
+gcloud projects add-iam-policy-binding your-project-id \
+    --member="serviceAccount:github-actions@your-project-id.iam.gserviceaccount.com" \
+    --role="roles/run.serviceAgent"
+```
+
 Create and download service account key
 ```bash
 gcloud iam service-accounts keys create github-actions-key.json \
